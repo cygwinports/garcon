@@ -1,0 +1,8 @@
+inherit xfce4
+
+DESCRIPTION="Xfce menu library"
+
+PKG_NAMES="${PN} lib${PN}1_0 lib${PN}1-devel"
+garcon_CONTENTS="etc/xdg/menus/ usr/share/desktop-directories/ usr/share/doc/"
+libgarcon1_0_CONTENTS="usr/bin/cyggarcon-1-0.dll usr/share/locale/"
+libgarcon1_devel_CONTENTS="usr/include/ usr/lib/ usr/share/gtk-doc/"

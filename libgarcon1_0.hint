@@ -1,0 +1,9 @@
+category: Xfce
+requires: garcon libglib2.0_0 libintl8
+external-source: garcon
+sdesc: "Xfce menu library (runtime)"
+ldesc: "This is garcon, a freedesktop.org compliant menu implementation 
+based on GLib and GIO. It was started as a complete rewrite of the 
+former Xfce menu library called libxfce4menu, which, in contrast to 
+garcon, was lacking menu merging features essential for loading menus 
+modified with menu editors."
