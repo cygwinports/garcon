@@ -1,5 +1,5 @@
 category: Xfce
-requires: garcon libglib2.0_0 libintl8
+requires: garcon libglib2.0_0 libintl8 libxfce4util6
 external-source: garcon
 sdesc: "Xfce menu library (runtime)"
 ldesc: "This is garcon, a freedesktop.org compliant menu implementation 

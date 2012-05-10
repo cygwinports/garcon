@@ -1,5 +1,5 @@
 category: Xfce
-requires: libgarcon1_0 libglib2.0-devel gettext
+requires: libgarcon1_0 libglib2.0-devel
 external-source: garcon
 sdesc: "Xfce menu library (development)"
 ldesc: "This is garcon, a freedesktop.org compliant menu implementation 
