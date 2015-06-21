@@ -2,14 +2,23 @@ inherit xfce4
 
 NAME="garcon"
 VERSION=0.2.1
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="Xfce desktop menu library"
 DESCRIPTION="This is garcon, a freedesktop.org compliant menu implementation
 based on GLib and GIO for the Xfce desktop."
 
+SRC_URI+=" mimeapps.list"
+
 PKG_NAMES="${NAME} lib${NAME}1_0 lib${NAME}1-devel"
-garcon_CONTENTS="etc/xdg/menus/ usr/share/desktop-directories/ usr/share/doc/"
+garcon_CONTENTS="etc/xdg/menus/ usr/share/applications/ usr/share/desktop-directories/ usr/share/doc/"
 libgarcon1_0_REQUIRES=${NAME}
 libgarcon1_0_CONTENTS="usr/bin/cyggarcon-1-0.dll usr/share/locale/"
 libgarcon1_devel_CONTENTS="usr/include/ usr/lib/" # usr/share/gtk-doc/"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	newmenu ${S}/mimeapps.list xfce-mimeapps.list
+}
