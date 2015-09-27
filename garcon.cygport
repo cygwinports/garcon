@@ -1,8 +1,8 @@
 inherit xfce4
 
 NAME="garcon"
-VERSION=0.2.1
-RELEASE=2
+VERSION=0.4.0
+RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Xfce desktop menu library"
 DESCRIPTION="This is garcon, a freedesktop.org compliant menu implementation
@@ -10,11 +10,22 @@ based on GLib and GIO for the Xfce desktop."
 
 SRC_URI+=" mimeapps.list"
 
-PKG_NAMES="${NAME} lib${NAME}1_0 lib${NAME}1-devel"
-garcon_CONTENTS="etc/xdg/menus/ usr/share/applications/ usr/share/desktop-directories/ usr/share/doc/"
+PKG_NAMES="${NAME} lib${NAME}1_0 lib${NAME}1-devel
+	   lib${NAME}-gtk2_1_0 lib${NAME}-gtk2_1-devel"
+garcon_CONTENTS="etc/xdg/menus/ usr/share/applications/ usr/share/desktop-directories/ usr/share/doc/ usr/share/locale/"
 libgarcon1_0_REQUIRES=${NAME}
-libgarcon1_0_CONTENTS="usr/bin/cyggarcon-1-0.dll usr/share/locale/"
-libgarcon1_devel_CONTENTS="usr/include/ usr/lib/" # usr/share/gtk-doc/"
+libgarcon1_0_CONTENTS="usr/bin/cyggarcon-1-0.dll"
+libgarcon1_devel_CONTENTS="
+	usr/include/garcon-1/
+	usr/lib/libgarcon-1.dll.a
+	usr/lib/pkgconfig/garcon-1.pc
+"
+libgarcon_gtk2_1_0_CONTENTS="usr/bin/cyggarcon-gtk2-1-0.dll"
+libgarcon_gtk2_1_devel_CONTENTS="
+	usr/include/garcon-gtk2-1/
+	usr/lib/libgarcon-gtk2-1.dll.a
+	usr/lib/pkgconfig/garcon-gtk2-1.pc
+"
 
 src_install() {
 	cd ${B}
